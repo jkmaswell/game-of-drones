@@ -1,0 +1,36 @@
+input,
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+input,
+select {
+  background: transparent;
+  border-bottom: 1px solid $white;
+  padding: 1rem;
+  width: 100%;
+
+  &:focus {
+    border-color: $malibu;
+  }
+}
+
+button {
+  border: 2px solid $white;
+  padding: 1.4rem 5rem;
+  border-radius: 5rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+
+  &:hover {
+    background: rgba($malibu, 0.2);
+    border-color: $malibu;
+    color: $malibu;
+  }
+
+  &:disabled {
+    background: rgba($white, 0.2);
+    pointer-events: none;
+    opacity: 0.3;
+  }
+}

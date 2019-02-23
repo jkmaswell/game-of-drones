@@ -1,0 +1,51 @@
+.rounds,
+.moves,
+.stat,
+.form {
+  display: flex; }
+
+.rounds {
+  max-width: 900px;
+  justify-content: space-between;
+  padding: 2rem 0;
+  width: 100%; }
+  @media (max-width: 40rem) {
+    .rounds {
+      flex-direction: column; } }
+
+.form,
+.stats {
+  width: 100%;
+  padding: 0 2rem; }
+
+.form {
+  flex-direction: column; }
+
+.username {
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin-bottom: 5rem; }
+
+.moves {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem; }
+  .moves .disc {
+    white-space: nowrap;
+    margin-right: 2rem; }
+
+.stats {
+  margin-bottom: 5rem; }
+  .stats .stat {
+    border-bottom: 1px solid #ffffff;
+    justify-content: space-around;
+    padding: 1rem 0; }
+    .stats .stat .item {
+      width: 50%;
+      text-transform: capitalize; }
+      .stats .stat .item.header {
+        color: #64daf6;
+        font-size: 1.6rem; }
+
+.next {
+  margin-bottom: 5rem; }

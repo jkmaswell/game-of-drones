@@ -17,30 +17,48 @@ MongoClient.connect('mongodb+srv://jkmisaza:JKMdatabase1804@cluster0-jklyc.mongo
   })
 })
 
-app.use(bodyParser.urlencoded({extended: true}))
-app.use(bodyParser.json())
-app.use(express.static('public'))
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(express.static('public'));
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
+
+app.get('/api/user', (req, res) => {
+  const name = req.query.name;
+  db.collection('users').findOne({name: name}, (err, result) => {
+    if (err) return console.log(err);
+    if (result) {
+      res.send(result);
+    } else {
+      res.sendStatus(404);
+    }
+  });
+});
 
 app.get('/api/users', (req, res) => {
   db.collection('users').find().toArray((err, result) => {
     if (err) return res.send(err);
     res.send(result);
-  })
-})
+  });
+});
 
 app.post('/api/users', (req, res) => {
-  db.collection('users').insertOne(req.body, (err, result) => {
+  db.collection('users').insertMany(req.body, (err, result) => {
     if (err) return console.log(err);
     res.send(result);
-  })
-})
+  });
+});
 
 app.put('/api/users', (req, res) => {
-  const userId = req.body.id;
+  const userName = req.body.name;
   db.collection('users')
-  .findOneAndUpdate({id: userId}, {
+  .findOneAndUpdate({name: userName}, {
     $set: {
-      id: req.body.id,
       name: req.body.name,
       wins: req.body.wins
     }
@@ -50,5 +68,14 @@ app.put('/api/users', (req, res) => {
   }, (err, result) => {
     if (err) return res.send(err)
     res.send(result)
-  })
-})
+  });
+});
+
+app.delete('/api/users', (req, res) => {
+  const userName = req.body.name;
+  db.collection('users')
+  .findOneAndDelete({name: userName}, (err, result) => {
+    if (err) return res.send(err)
+    res.send(result)
+  });
+});

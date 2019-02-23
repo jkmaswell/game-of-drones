@@ -1,0 +1,70 @@
+@import '../../common/scss/variables';
+
+.rounds,
+.moves,
+.stat,
+.form {
+  display: flex;
+}
+
+.rounds {
+  max-width: 900px;
+  justify-content: space-between;
+  padding: 2rem 0;
+  width: 100%;
+
+  @media (max-width: 40rem) {
+    flex-direction: column;
+  }
+}
+
+.form,
+.stats {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.form {
+  flex-direction: column;
+}
+
+.username {
+  font-size: 2rem;
+  text-transform: capitalize;
+  margin-bottom: 5rem;
+}
+
+.moves {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+
+  .disc {
+    white-space: nowrap;
+    margin-right: 2rem;
+  }
+}
+
+.stats {
+  margin-bottom: 5rem;
+
+  .stat {
+    border-bottom: 1px solid $white;
+    justify-content: space-around;
+    padding: 1rem 0;
+
+    .item {
+      width: 50%;
+      text-transform: capitalize;
+
+      &.header {
+        color: $malibu;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+.next {
+  margin-bottom: 5rem;
+}

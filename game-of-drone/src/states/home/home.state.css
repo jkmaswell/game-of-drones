@@ -1,0 +1,23 @@
+.home,
+.players {
+  align-items: center;
+  display: flex;
+  flex-direction: column; }
+
+.home {
+  padding: 2rem; }
+
+.players {
+  margin-top: 5rem;
+  width: 100%; }
+  .players label {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    white-space: nowrap;
+    width: 100%; }
+    .players label input {
+      margin-left: 2rem; }
+  .players button {
+    margin-top: 5rem; }

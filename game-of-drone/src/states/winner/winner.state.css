@@ -1,0 +1,14 @@
+.winner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem; }
+  .winner .disc {
+    font-size: 6rem;
+    font-weight: 300;
+    margin-bottom: 5rem;
+    text-align: center; }
+    .winner .disc .winner-name {
+      font-size: 6rem;
+      font-weight: 700;
+      text-transform: capitalize; }
