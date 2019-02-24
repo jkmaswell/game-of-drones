@@ -139,37 +139,44 @@ export class RoundsComponent extends Component {
 
   render() {
     return (
-      <div className="rounds">
-        <div className="form">
-        <h1>Round {this.state.rounds}</h1>
-        <span className="username">
-          {!this.isOdd(this.state.movements) ? this.state.users[0].name : this.state.users[1].name}
-        </span>
-        <div className="moves">
-          <span className="disc">Select move:</span>
-          <select value={this.state.selectValue} onChange={this.handleChange}>
-            <option disabled value="">Select an option</option>
-            <option value="Rock">Rock</option>
-            <option value="Paper">Paper</option>
-            <option value="Scissors">Scissors</option>
-          </select>
-        </div>
-        <button className="next" onClick={this.handleSubmit} disabled={this.state.selectValue.length === 0}>Ok</button></div>
-        <div className="stats">
-          <div className="stat">
-            <span className="item header">Round</span>
-            <span className="item header">Winner</span>
-          </div>
-          {this.state.stats.map((stat, index) => {
-            return (
-              <div className="stat" key={index}>
-                <span className="item">{stat.round}</span>
-                <span className="item">{stat.winner}</span>
+      <main>
+        <div className="rounds">
+          <section>
+            <div className="form">
+              <h1>Round {this.state.rounds}</h1>
+              <span className="username">
+                {!this.isOdd(this.state.movements) ? this.state.users[0].name : this.state.users[1].name}
+              </span>
+              <div className="moves">
+                <span className="disc">Select move:</span>
+                <select value={this.state.selectValue} onChange={this.handleChange}>
+                  <option disabled value="">Select an option</option>
+                  <option value="Rock">Rock</option>
+                  <option value="Paper">Paper</option>
+                  <option value="Scissors">Scissors</option>
+                </select>
               </div>
-            )
-          })}
+              <button className="next" onClick={this.handleSubmit} disabled={this.state.selectValue.length === 0}>Ok</button>
+            </div>
+          </section>
+          <section>
+            <div className="stats">
+              <div className="stat">
+                <span className="item header">Round</span>
+                <span className="item header">Winner</span>
+              </div>
+              {this.state.stats.map((stat, index) => {
+                return (
+                  <div className="stat" key={index}>
+                    <span className="item">{stat.round}</span>
+                    <span className="item">{stat.winner}</span>
+                  </div>
+                )
+              })}
+            </div>
+          </section>
         </div>
-      </div>
+      </main>
     );
   }
 }
