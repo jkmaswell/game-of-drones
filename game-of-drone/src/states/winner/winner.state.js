@@ -26,7 +26,7 @@ export class WinnerComponent extends Component {
       <div className="winner">
         <h1>We have a winner</h1>
         <span className="disc"><span className="winner-name">{this.state.winner}</span> is the new EMPEROR!</span>
-        <button type="button" onClick={this.goToHome}>Play again</button>
+        <button id="go-home" type="button" onClick={this.goToHome}>Play again</button>
       </div>
     );
   }
