@@ -108,21 +108,19 @@ export class HomeComponent extends Component {
         <header>
           <h1>Enter player's names</h1>
         </header>
-        <main>
-          <section>
-            <form className="players" onSubmit={this.submitHandler} noValidate>
-              <label>
-                Player 1:
-                <input id="userOne" name="userOne" type="text" onChange={this.changeHandler} />
-              </label>
-              <label>
-                Player 2:
-                <input id="userTwo" name="userTwo" type="text" onChange={this.changeHandler} />
-              </label>
-              <button id="submit" type="submit" disabled={!this.state.formValid}>Start</button>
-            </form>
-          </section>
-        </main>
+        <section>
+          <form className="players" onSubmit={this.submitHandler} noValidate>
+            <label>
+              Player 1:
+              <input id="userOne" name="userOne" type="text" onChange={this.changeHandler} />
+            </label>
+            <label>
+              Player 2:
+              <input id="userTwo" name="userTwo" type="text" onChange={this.changeHandler} />
+            </label>
+            <button id="submit" type="submit" disabled={!this.state.formValid}>Start</button>
+          </form>
+        </section>
       </div>
     );
   }
