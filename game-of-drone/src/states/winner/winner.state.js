@@ -23,17 +23,13 @@ export class WinnerComponent extends Component {
 
   render() {
     return (
-      <div className="winner">
-        <header>
+      <section>
+        <div className="winner">
           <h1>We have a winner</h1>
-        </header>
-        <main>
-          <section>
-            <span className="disc"><span className="winner-name">{this.state.winner}</span> is the new EMPEROR!</span>
-            <button id="go-home" type="button" onClick={this.goToHome}>Play again</button>
-          </section>
-        </main>
-      </div>
+          <span className="disc"><span className="winner-name">{this.state.winner}</span> is the new EMPEROR!</span>
+          <button id="go-home" type="button" onClick={this.goToHome}>Play again</button>
+        </div>
+      </section>
     );
   }
 }
